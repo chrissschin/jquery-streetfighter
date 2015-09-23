@@ -28,11 +28,33 @@ $(document).ready(function() {
     $('.ryu-throwing').hide();
     $('.ryu-ready').show();
     //ryu goes back to his ready positon
+  });
+  $("html").keydown(function(){
+    console.log('keypress');
+    playRockWithYou();
+    $(".ryu-still").hide();
+    $(".ryu-ready").hide();
+    $(".donot").hide();
+    $(".whyudothat").show();
+    $(".ryu-cool").show();
+
   })
+  .keyup(function(){
+
+    $(".ryu-ready").show();
+    $(".ryu-cool").hide();
+  });
+
 });
 
 function playHadouken () {
   $('#hadouken-sound')[0].volume = 0.5;
   $('#hadouken-sound')[0].load();
   $('#hadouken-sound')[0].play();
+}
+
+function playRockWithYou () {
+  $("#rockwithyou")[0].volume = 0.5;
+  $("#rockwithyou")[0].load();
+  $("#rockwithyou")[0].play();
 }
